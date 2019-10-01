@@ -11,7 +11,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.LoginPage;
 import utils.PropertiesFileReader;
 import utils.WaitForAlert;
 import utils.WaitForPageToLoad;
@@ -48,22 +47,7 @@ public class BaseTest {
 		}
 	}
 
-	protected void login() {
-		// TODO: because may be reusable
 
-		// 1. Go to the login page
-		driver.get(getProperty("testUrl"));
-
-		// 2. Enter username
-		LoginPage.typeEmailField(driver, properties.getProperty("testUserName"));
-
-		// wait
-
-		// enter password
-
-		// click Login
-
-	}
 
 	public String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
