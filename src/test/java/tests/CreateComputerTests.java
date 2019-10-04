@@ -22,7 +22,7 @@ public class CreateComputerTests extends BaseTest {
 	}
 
 	@Test(groups = { "user", "happyPath" })
-	public void validLogin() {
+	public void validCreateComputer() {
 
 		// go to computers
 		driver.get(getProperty("testUrl"));
@@ -35,27 +35,22 @@ public class CreateComputerTests extends BaseTest {
 		// enter computer name
 		AddComputerPage.typeComputerNameTextField(driver, computerName);
 
-		// TODO randomize
 		// enter introduced
-		AddComputerPage.typeIntroducedTextField(driver, "2000-01-01");
+		AddComputerPage.typeIntroducedTextField(driver, RandomValueGenerator.getRandomDate(1));
 
-		// TODO
 		// enter discontinued
-		AddComputerPage.typeDiscontinuedTextField(driver, "2000-01-01");
+		AddComputerPage.typeDiscontinuedTextField(driver, RandomValueGenerator.getRandomDate(2));
 
 		// select company
-		// TODO
+		AddComputerPage.selectCompanyDropdownItem(driver, RandomValueGenerator.getRandomInt(1, 41));
 
 		// click create
 		AddComputerPage.clickCreateButton(driver);
 
 		// assert Done message
-		Assert.assertTrue(ComputersPage.messageWarning(driver).getText()
-				.contains("Computer " + computerName + "a has been created"), "Alert message not displayed");
-
-		// filter
-
-		// assert filter results
+		String messageWarning = ComputersPage.messageWarning(driver).getText();
+		Assert.assertTrue(messageWarning.contains("Computer " + computerName + " has been created"),
+				"Alert message not displayed");
 
 	}
 

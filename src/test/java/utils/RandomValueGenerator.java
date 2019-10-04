@@ -50,11 +50,26 @@ public class RandomValueGenerator {
 		return randomNum;
 	}
 
-	public static String getRandomDate() {
+	public static String getRandomDate(int range) {
+
+		String str_date1 = "2001-01-01";
+		String str_date2 = "2018-12-31";
+
+		switch (range) {
+		case 1:
+			str_date1 = "2001-01-01";
+			str_date2 = "2009-12-31";
+			break;
+		case 2:
+			str_date1 = "2010-01-01";
+			str_date2 = "2018-12-31";
+			break;
+
+		}
+
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
-		String str_date1 = "2010-01-01";
-		String str_date2 = "2017-12-31";
+
 		Long value1 = cal.getTimeInMillis();
 
 		try {
@@ -69,7 +84,6 @@ public class RandomValueGenerator {
 		long value3 = (long) (value1 + Math.random() * (value2 - value1));
 		cal.setTimeInMillis(value3);
 		return formatter.format(cal.getTime());
-
 	}
 
 }

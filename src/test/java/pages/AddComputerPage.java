@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class AddComputerPage extends BasePage {
 
@@ -26,6 +27,16 @@ public class AddComputerPage extends BasePage {
 	public static WebElement companyDropdown(WebDriver driver) {
 		element = getWebElement(driver, By.id("company"));
 		return element;
+	}
+
+	public static void selectCompanyDropdownItem(WebDriver driver, String selectText) {
+		Select dropdown = new Select(companyDropdown(driver));
+		dropdown.selectByVisibleText(selectText);
+	}
+
+	public static void selectCompanyDropdownItem(WebDriver driver, int selectIndex) {
+		Select dropdown = new Select(companyDropdown(driver));
+		dropdown.selectByIndex(selectIndex);
 	}
 
 	public static WebElement createButton(WebDriver driver) {
@@ -52,18 +63,18 @@ public class AddComputerPage extends BasePage {
 		discontinuedTextField(driver).clear();
 		discontinuedTextField(driver).sendKeys(text);
 	}
-	
+
 	public static void clickCreateButton(WebDriver driver) {
 		createButton(driver).click();
 	}
-	
+
 	public static void clickCancelButton(WebDriver driver) {
 		cancelButton(driver).click();
 	}
-	
-	//TODO
+
+	// TODO
 	public static void selectCompany(WebDriver driver) {
-		//companyDropdown();
+		// companyDropdown();
 	}
 
 }
