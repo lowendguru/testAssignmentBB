@@ -32,7 +32,7 @@ public class CreateComputerTest extends BaseTest {
 
 		// assert Done message
 		String messageWarning = ComputersPage.messageWarning(driver).getText();
-		Assert.assertTrue(messageWarning.contains("Computer " + computer.getCompanyName() + " has been created"),
+		Assert.assertTrue(messageWarning.contains("Computer " + computer.getName() + " has been created"),
 				"Message not displayed");
 
 	}
