@@ -35,6 +35,14 @@ public class DeleteComputerTest extends BaseTest {
 		String messageWarning = ComputersPage.messageWarning(driver).getText();
 		Assert.assertTrue(messageWarning.contains("Done! Computer has been deleted"), "Message not displayed");
 
+		// search computer
+		ComputersPage.typeFilterComputerTextField(driver, computer.getName());
+		ComputersPage.clickFilterButton(driver);
+
+		// assert computer is not present after searching
+		String messageBody = ComputersPage.messageBody(driver).getText();
+		Assert.assertTrue(messageBody.equals("Nothing to display"), "Message not displayed");
+
 	}
 
 }

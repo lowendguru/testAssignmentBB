@@ -14,6 +14,7 @@ import utils.RandomValueGenerator;
 public class UpdateComputerTest extends BaseTest {
 
 	private Computer computer;
+	private Computer computer2;
 
 	@BeforeClass
 	public void setUp() {
@@ -23,7 +24,7 @@ public class UpdateComputerTest extends BaseTest {
 
 	@AfterClass
 	public void tearDown() {
-		deleteComputer(computer.getName());
+		deleteComputer(computer2.getName());
 		super.tearDown();
 	}
 
@@ -40,24 +41,28 @@ public class UpdateComputerTest extends BaseTest {
 		// click on result to open Edit screen
 		ComputersPage.clickFirstResultInTable(driver);
 
+		// generate new values to use
+		computer2 = new Computer();
+		computer2.initialize();
+
 		// enter computer name
-		EditComputerPage.typeComputerNameTextField(driver, computer.getName());
+		EditComputerPage.typeComputerNameTextField(driver, computer2.getName());
 
 		// enter introduced
-		EditComputerPage.typeIntroducedTextField(driver, RandomValueGenerator.getRandomDate(1));
+		EditComputerPage.typeIntroducedTextField(driver, computer2.getIntroduced());
 
 		// enter discontinued
-		EditComputerPage.typeDiscontinuedTextField(driver, RandomValueGenerator.getRandomDate(2));
+		EditComputerPage.typeDiscontinuedTextField(driver, computer2.getDiscontinued());
 
 		// select company
-		EditComputerPage.selectCompanyDropdownItem(driver, RandomValueGenerator.getRandomInt(1, 41));
+		EditComputerPage.selectCompanyDropdownItem(driver, computer2.getCompanyValue());
 
 		// click save
 		EditComputerPage.clickSaveButton(driver);
 
 		// assert Done message
 		String messageWarning = ComputersPage.messageWarning(driver).getText();
-		Assert.assertTrue(messageWarning.contains("Computer " + computer.getName() + " has been updated"),
+		Assert.assertTrue(messageWarning.contains("Computer " + computer2.getName() + " has been updated"),
 				"Message not displayed");
 
 	}

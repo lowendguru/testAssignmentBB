@@ -47,4 +47,9 @@ public class ComputersPage extends BasePage {
 
 	}
 
+	public static WebElement messageBody(WebDriver driver) {
+		element = getWebElement(driver, By.xpath("//*[@id=\"main\"]/div[2]/em"));
+		return element;
+	}
+
 }
