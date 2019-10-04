@@ -10,8 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import entities.Computer;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.AddComputerPage;
+import pages.ComputersPage;
+import pages.EditComputerPage;
 import utils.PropertiesFileReader;
+import utils.RandomValueGenerator;
 import utils.WaitForAlert;
 import utils.WaitForPageToLoad;
 
@@ -49,6 +54,54 @@ public class BaseTest {
 
 	public String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
+	}
+
+	public Computer createComputer() {
+
+		Computer computerPojo = new Computer();
+		computerPojo.initialize();
+
+		// go to computers
+		driver.get(getProperty("testUrl"));
+
+		// click add
+		ComputersPage.clickAddComputerButton(driver);
+
+		// enter computer name
+		AddComputerPage.typeComputerNameTextField(driver, computerPojo.getName());
+
+		// enter introduced
+		AddComputerPage.typeIntroducedTextField(driver, computerPojo.getIntroduced());
+
+		// enter discontinued
+		AddComputerPage.typeDiscontinuedTextField(driver, computerPojo.getDiscontinued());
+
+		// select company
+		AddComputerPage.selectCompanyDropdownItem(driver, computerPojo.getCompanyValue());
+		// get company name from dropdown
+		computerPojo.setCompanyName(AddComputerPage.getSelectedCompanyText(driver));
+
+		// click create
+		AddComputerPage.clickCreateButton(driver);
+
+		return computerPojo;
+	}
+
+	public void deleteComputer(String computerName) {
+
+		// go to computers
+		driver.get(getProperty("testUrl"));
+
+		// search computer
+		ComputersPage.typeFilterComputerTextField(driver, computerName);
+		ComputersPage.clickFilterButton(driver);
+
+		// click on result to open Edit screen
+		ComputersPage.clickFirstResultInTable(driver);
+
+		// click delete button
+		EditComputerPage.clickDeleteButton(driver);
+
 	}
 
 }

@@ -38,6 +38,11 @@ public class AddComputerPage extends BasePage {
 		Select dropdown = new Select(companyDropdown(driver));
 		dropdown.selectByIndex(selectIndex);
 	}
+	
+	public static String getSelectedCompanyText(WebDriver driver) {
+		Select dropdown = new Select(companyDropdown(driver));
+		return dropdown.getFirstSelectedOption().getText();
+	}
 
 	public static WebElement createButton(WebDriver driver) {
 		element = getWebElement(driver, By.xpath("//*[@id=\"main\"]/form/div/input"));

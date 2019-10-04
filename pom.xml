@@ -73,8 +73,7 @@
 							<include>**/*TestCase.java</include>
 						</includes>
 						<reportsDirectory>./test-output/${timestamp}</reportsDirectory>
-						<parallel>methods</parallel>
-						<threadCount>1</threadCount> <!-- Number of tests to run in parallel. -->
+
 					</configuration>
 				</plugin>
 			</plugins>
