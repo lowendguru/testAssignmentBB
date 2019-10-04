@@ -47,8 +47,6 @@ public class BaseTest {
 		}
 	}
 
-
-
 	public String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
 	}

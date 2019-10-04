@@ -2,11 +2,10 @@
 <suite name="ACA Sanity Test Suite">
 
 
-	<test name="User Tests">
+	<test name="Create Tests">
 
 		<classes>
-			<class name="tests.LoginValidTest" />
-
+			<class name="tests.CreateComputerTests" />
 
 		</classes>
 	</test>
