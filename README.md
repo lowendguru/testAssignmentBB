@@ -4,12 +4,12 @@
 
 The following documents can be found in the /docs folder.
 * Test Plan - computer-database.docx: Test approach and definitions.
-* Test Cases - computer-database: Includes a sheet with a suite of Test Cases for manual execution called "Functional Test Cases". Also has a sheet called "Test Summary" with summary data about test results and feature coverage. Finally, this file has a sheet called "Defects" with the description of issues found during test execution. Video or picture files with evidence of the defects can be found in the /docs/bug_evidence folder.
+* Test Cases - computer-database.xlsx: Includes a sheet with a suite of Test Cases for manual execution called "Functional Test Cases". Also has a sheet called "Test Summary" with summary data about test results and feature coverage. Finally, this file has a sheet called "Defects" with the description of issues found during test execution. Video or picture files with evidence of the defects can be found in the /docs/bug_evidence folder.
 
 
 # Automated Test Suite
 
-These tests are written in Java using 'Selenium' and 'testNG' as a testing framework. 
+These tests are written in Java using 'Selenium' and 'testNG' as a testing framework with Maven as dependency manager. 
 The test suite contains test cases which represent a small portion of the full manual test suite. These test the basic core functionality of the 'computer-database' app.
 The tests were designed to be executed on Google Chrome as it is the browser with the biggest market share at the time of these tests.
 
@@ -33,7 +33,7 @@ The automated test suite has four test cases:
 The requirements to run this automated tests are:
 - Maven
 - Java 1.8
-- Google Chrome (latest)
+- Google Chrome 77 (or newer version)
 
 ### Maven project
 
