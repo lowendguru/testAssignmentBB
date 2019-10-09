@@ -43,8 +43,6 @@ public class ComputersPage extends BasePage {
 
 	public static void clickFirstResultInTable(WebDriver driver) {
 		getWebElement(driver, By.xpath("//*[@id=\"main\"]/table/tbody/tr[1]/td[1]/a")).click();
-		;
-
 	}
 
 	public static WebElement messageBody(WebDriver driver) {
