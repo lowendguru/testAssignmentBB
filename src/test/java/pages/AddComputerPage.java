@@ -38,7 +38,7 @@ public class AddComputerPage extends BasePage {
 		Select dropdown = new Select(companyDropdown(driver));
 		dropdown.selectByIndex(selectIndex);
 	}
-	
+
 	public static String getSelectedCompanyText(WebDriver driver) {
 		Select dropdown = new Select(companyDropdown(driver));
 		return dropdown.getFirstSelectedOption().getText();
@@ -76,10 +76,4 @@ public class AddComputerPage extends BasePage {
 	public static void clickCancelButton(WebDriver driver) {
 		cancelButton(driver).click();
 	}
-
-	// TODO
-	public static void selectCompany(WebDriver driver) {
-		// companyDropdown();
-	}
-
 }
