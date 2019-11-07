@@ -15,7 +15,7 @@
 		<testNG.version>6.11</testNG.version>
 		<selenium.version>3.8.1</selenium.version>
 		<webdrivermanager.version>3.6.1</webdrivermanager.version>
-		<surefire.version>2.20.1</surefire.version>
+		<surefire.version>2.21.0</surefire.version>
 	</properties>
 
 	<dependencies>
