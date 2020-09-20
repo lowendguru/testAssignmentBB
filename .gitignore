@@ -7,12 +7,5 @@
 docs/~$Test Cases - computer-database.xlsx
 *.prefs
 docs/~$st Plan - computer-database.docx
-.idea/$PRODUCT_WORKSPACE_FILE$
-.idea/.name
-.idea/codeStyles/codeStyleConfig.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/sbt.xml
-.idea/vcs.xml
-.idea/workspace.xml
+/.idea/
 computer-database-tests-bb.iml
