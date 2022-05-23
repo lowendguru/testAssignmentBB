@@ -6,9 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import entities.Computer;
-import pages.AddComputerPage;
 import pages.ComputersPage;
-import utils.RandomValueGenerator;
 
 public class CreateComputerTest extends BaseTest {
 

@@ -6,10 +6,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import entities.Computer;
-import pages.AddComputerPage;
 import pages.ComputersPage;
 import pages.EditComputerPage;
-import utils.RandomValueGenerator;
 
 public class UpdateComputerTest extends BaseTest {
 

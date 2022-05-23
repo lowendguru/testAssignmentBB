@@ -10,6 +10,7 @@ import utils.WaitForElementPresentWithText;
 
 public class BasePage {
 
+	
 	public static WebElement getWebElement(WebDriver driver, By locator) {
 		WebElement element = null;
 

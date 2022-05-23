@@ -16,7 +16,6 @@ import pages.AddComputerPage;
 import pages.ComputersPage;
 import pages.EditComputerPage;
 import utils.PropertiesFileReader;
-import utils.RandomValueGenerator;
 import utils.WaitForAlert;
 import utils.WaitForPageToLoad;
 
