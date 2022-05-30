@@ -43,7 +43,7 @@ The test suite can be executed via command line.
 ```
     $mvn clean test
 ```
-This will run all the tests and results will be available in the /test-output/${timestamp} folder. Every execution creates a new /${timestamp} subfolder. This way all previous executions are saved for future reference.
+This will run all the tests and results will be available in the `/test-output/${timestamp}` folder. Every execution creates a new `/${timestamp}` subfolder. This way all previous executions are saved for future reference.
 
 
 
